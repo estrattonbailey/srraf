@@ -1,0 +1,27 @@
+{
+  "name": "srraf",
+  "version": "0.0.1",
+  "description": "Better scroll and resize handling",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "standard 'src/*.js'",
+    "prebuild": "npm run lint",
+    "build": "babel index.js -d dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/srraf.git"
+  },
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/srraf/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/srraf#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "standard": "^8.6.0"
+  }
+}
