@@ -1,12 +1,19 @@
 # srraf
 Better scroll and resize listeners using `requestAnimationFrame`.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
+
 **Features:**
 
 1. Listeners are *lazy*, and only instantiated when you make your first instance
 2. Only one `scroll` and one `resize` listener handle all callbacks
 3. Simple API
 4. *882 bytes* gzipped
+
+## Install 
+```bash
+npm i srraf --save
+```
 
 ## Usage
 ```javascript
