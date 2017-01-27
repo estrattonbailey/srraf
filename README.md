@@ -8,7 +8,7 @@ Better scroll and resize listeners using `requestAnimationFrame`.
 1. Listeners are *lazy*, and only instantiated when you make your first instance
 2. Only one `scroll` and one `resize` listener handle all callbacks
 3. Simple API
-4. *882 bytes* gzipped
+4. *~900 bytes* gzipped
 
 ## Install 
 ```bash
@@ -16,23 +16,24 @@ npm i srraf --save
 ```
 
 ## Usage
+All callbacks are fired with a position object and the native scroll event.
 ```javascript
 import srraf from 'srraf'
 
 /**
  * Scroll only
  */
-const scroller = srraf.scroll.use((currY, prevY) => { /* handler */ })
+const scroller = srraf.scroll.use(({ curr, prev }, event) => { /* handler */ })
 
 /**
  * Resize only
  */
-const resizer = srraf.resize.use((currX, prevX) => { /* handler */ })
+const resizer = srraf.resize.use(({ curr, prev }, event) => { /* handler */ })
 
 /**
  * Both
  */
-const listener = srraf.use(({ currY, prevY, currX, prevX }) => { /* handler */ })
+const listener = srraf.use(({ currY, prevY, currX, prevX }, event) => { /* handler */ })
 ```
 
 All instances return `update()` and `destroy()` methods.

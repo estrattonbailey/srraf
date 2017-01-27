@@ -21,7 +21,8 @@ class Listener {
     )
   }
 
-  requestFrame () {
+  requestFrame (e) {
+    this.e = e
     this.curr = this.position()
 
     if (!this.ticking) {
@@ -31,7 +32,7 @@ class Listener {
   }
 
   run () {
-    this.queue.forEach(q => q[1](this.curr, this.prev))
+    this.queue.forEach(q => q[1]({ curr: this.curr, prev: this.prev }, this.e))
     this.prev = this.curr
     this.ticking = false
   }
@@ -53,7 +54,7 @@ class Listener {
         return this
       },
       update () {
-        cb(self.curr, self.prev)
+        cb({ curr: self.curr, prev: self.prev }, self.e)
         return this
       }
     }
@@ -79,18 +80,18 @@ export default typeof window !== 'undefined' ? ({
 
     let position = { currY, prevY, currX, prevX }
 
-    const scroller = this.scroll.use((curr, prev) => {
+    const scroller = this.scroll.use(({ curr, prev }, e) => {
       position.currY = curr
       position.prevY = prev
 
-      cb(position)
+      cb(position, e)
     })
 
-    const resizer = this.resize.use((curr, prev) => {
+    const resizer = this.resize.use(({ curr, prev }, e) => {
       position.currX = curr
       position.prevX = prev
 
-      cb(position)
+      cb(position, e)
     })
 
     return {
