@@ -1,10 +1,10 @@
 {
   "name": "srraf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Better scroll and resize handling",
   "main": "dist/index.js",
   "scripts": {
-    "umd": "mkdir -p dist && browserify index.js --standalone overunder > dist/index.umd.js",
+    "umd": "mkdir -p dist && browserify index.js --standalone srraf > dist/index.umd.js",
     "lint": "standard 'src/*.js'",
     "prebuild": "npm run lint",
     "build": "babel index.js -d dist/",
