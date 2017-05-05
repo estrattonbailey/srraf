@@ -1,5 +1,9 @@
 import srraf from '../package/index.js'
 
-// srraf.use((position, e) => console.log(position, e))
-// srraf.scroll.use(({ curr, prev }) => console.log(curr, prev))
-srraf.resize.use(({ curr, prev }, e) => console.log(e))
+window.srraf = {
+  // one: srraf.scroll.use(({ curr, prev }) => console.log('one')),
+  // two: srraf.scroll.use(({ curr, prev }) => console.log('two')),
+  // three: srraf.scroll.use(({ curr, prev }) => console.log('three')),
+}
+
+window.test = Object.create(srraf.scroll.use(({ curr, prev }) => console.log('test')))
