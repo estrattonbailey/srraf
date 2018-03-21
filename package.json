@@ -1,0 +1,31 @@
+{
+  "name": "srraf",
+  "version": "1.0.1",
+  "description": "Better scroll and resize handling",
+  "source": "index.js",
+  "module": "dist/srraf.es.js",
+  "main": "dist/srraf.js",
+  "umd:main": "dist/srraf.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle build",
+    "watch": "microbundle watch",
+    "publish": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/srraf.git"
+  },
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/srraf/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/srraf#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "microbundle": "^0.4.4"
+  }
+}

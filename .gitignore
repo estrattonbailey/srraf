@@ -1,5 +1,4 @@
 .DS_Store
 *.map
 node_modules/
-package/dist
-example/demo.js
+dist
