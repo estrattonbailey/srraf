@@ -1,6 +1,6 @@
 {
   "name": "srraf",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Better scroll and resize handling",
   "source": "index.js",
   "module": "dist/srraf.es.js",
