@@ -35,7 +35,10 @@ export default function srraf (fn) {
       fns.splice(fns.indexOf(fn), 1)
     },
     update () {
-      handler()
+      const { x, y } = pos()
+      fn({ y, prevY, x, prevX }, null)
+      prevY = y
+      prevX = x
       return this
     }
   }
