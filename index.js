@@ -6,7 +6,7 @@ let { x: prevX, y: prevY } = pos()
 const fns = []
 
 function pos () {
-  if (typeof window === 'undefined') {}
+  if (typeof window === 'undefined') return {}
   return {
     x: window.innerWidth,
     y: window.pageYOffset
