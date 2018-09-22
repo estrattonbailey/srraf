@@ -23,21 +23,25 @@ function raf (t) {
     vh !== pvh ||
     vw !== pvw
   ) {
-    for (let i = 0; i < fns.length; i++) {
-      fns[i]({ x, y, px, py, vh, pvh, vw, pvw }, t)
-    }
+    run(t)
 
     px = x
     py = y
     pvh = vh
     pvw = vw
   }
-
   return requestAnimationFrame(raf)
+}
+
+function run (t) {
+  for (let i = 0; i < fns.length; i++) {
+    fns[i]({ x, y, px, py, vh, pvh, vw, pvw }, t)
+  }
 }
 
 export default function srraf (fn) {
   fns.indexOf(fn) < 0 && fns.push(fn)
-  if (!frame) frame = raf(performance.now())
+  frame = frame || raf(performance.now())
+  run(performance.now())
   return () => fns.splice(fns.indexOf(fn), 1)
 }
