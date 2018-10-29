@@ -17,6 +17,11 @@ function raf (t) {
   vh = window.innerHeight
   vw = window.innerWidth
 
+  if (!px) px = x
+  if (!py) py = y
+  if (!pvw) pvw = vw
+  if (!pvh) pvh = vh
+
   if (
     y !== py ||
     x !== px ||
