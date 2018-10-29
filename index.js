@@ -42,6 +42,5 @@ function run (t) {
 export default function srraf (fn) {
   fns.indexOf(fn) < 0 && fns.push(fn)
   frame = frame || raf(performance.now())
-  run(performance.now())
   return () => fns.splice(fns.indexOf(fn), 1)
 }
