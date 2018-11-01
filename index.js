@@ -11,7 +11,7 @@ let pvw
 
 const fns = []
 
-function raf (t) {
+function raf (t, force) {
   x = window.pageXOffset
   y = window.pageYOffset
   vh = window.innerHeight
@@ -23,6 +23,7 @@ function raf (t) {
   if (!pvh) pvh = vh
 
   if (
+    force ||
     y !== py ||
     x !== px ||
     vh !== pvh ||
@@ -35,6 +36,7 @@ function raf (t) {
     pvh = vh
     pvw = vw
   }
+
   return requestAnimationFrame(raf)
 }
 
@@ -49,7 +51,7 @@ export default function srraf (fn) {
   frame = frame || raf(performance.now())
   return {
     update () {
-      raf(performance.now())
+      raf(performance.now(), true)
     },
     destroy () {
       fns.splice(fns.indexOf(fn), 1)

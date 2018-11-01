@@ -14,7 +14,8 @@ const scroller = srraf(({ x, px, y, py, vh, pvh, vw, pvw }, timestamp) => {
   // ...
 })
 
-scroller() // destroy listener
+scroller.update() // check position
+scroller.destroy() // destroy listener
 ```
 
 Note: values prefixed with `p` denote *previous* values.
