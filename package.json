@@ -23,8 +23,7 @@
     "url": "https://github.com/estrattonbailey/srraf/issues"
   },
   "homepage": "https://github.com/estrattonbailey/srraf#readme",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "microbundle": "^0.4.4"
   }
 }
