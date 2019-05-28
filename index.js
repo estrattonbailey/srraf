@@ -52,6 +52,7 @@ export default function srraf (fn) {
   return {
     update () {
       raf(performance.now(), true)
+      return this
     },
     destroy () {
       fns.splice(fns.indexOf(fn), 1)
