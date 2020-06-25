@@ -17,10 +17,10 @@ function raf (t, force) {
   vh = window.innerHeight
   vw = window.innerWidth
 
-  if (!px) px = x
-  if (!py) py = y
-  if (!pvw) pvw = vw
-  if (!pvh) pvh = vh
+  if (px === undefined) px = x
+  if (py === undefined) py = y
+  if (pvw === undefined) pvw = vw
+  if (pvh === undefined) pvh = vh
 
   if (
     force ||
